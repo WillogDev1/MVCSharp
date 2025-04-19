@@ -12,3 +12,4 @@ C:\Users\Will\source\repos\MVCSharp\MVCSharp\obj\Debug\net8.0\refint\MVCSharp.dl
 C:\Users\Will\source\repos\MVCSharp\MVCSharp\obj\Debug\net8.0\MVCSharp.pdb
 C:\Users\Will\source\repos\MVCSharp\MVCSharp\obj\Debug\net8.0\MVCSharp.genruntimeconfig.cache
 C:\Users\Will\source\repos\MVCSharp\MVCSharp\obj\Debug\net8.0\ref\MVCSharp.dll
+C:\Users\Will\source\repos\MVCSharp\MVCSharp\obj\Debug\net8.0\MVCSharp.sourcelink.json
