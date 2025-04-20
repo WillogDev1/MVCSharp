@@ -1,5 +1,7 @@
-﻿using MVCSharp.App.Controller;
+﻿using System.Configuration;
+using MVCSharp.App.Controller;
 using MVCSharp.App.Controller.Login;
+using MVCSharp.Database;
 
 namespace Program
 {
@@ -8,10 +10,7 @@ namespace Program
     /// </summary>
     class Program
     {
-        /// <summary>
-        /// Caminho para o diretório onde as views do menu estão localizadas.
-        /// </summary>
-        private static string PATH_MENU = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\App\View");
+
 
         /// <summary>
         /// Habilita Login antes de Bootar sistema
@@ -24,6 +23,8 @@ namespace Program
         /// <param name="args">Argumentos de linha de comando.</param>
         static void Main(string[] args)
         {
+            Conn conexao = new Conn();
+            conexao.TestConnection();
 
             Login login = new Login();
 
@@ -33,17 +34,7 @@ namespace Program
             }
             else
             {
-                // Instancia o handler responsável pelo layout do menu.
-                MVCSharp.Handler.Index index = new MVCSharp.Handler.Index();
-
-                // Instancia o controlador do menu.
-                Controller indexController = new Controller();
-
-                // Obtém a opção selecionada pelo usuário no menu.
-                int OPTION = index.layout(PATH_MENU, "MENU");
-
-                // Chama o método do controlador para processar a opção selecionada.
-                indexController.index(OPTION);
+                login.login();
             }
         }
     }

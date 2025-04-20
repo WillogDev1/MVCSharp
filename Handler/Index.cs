@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,13 @@ namespace MVCSharp.Handler
         /// <param name="FILE_PATH">Caminho para o arquivo contendo as opções do menu.</param>
         /// <param name="HEADER">Cabeçalho do menu a ser exibido.</param>
         /// <returns>Retorna a opção selecionada pelo usuário.</returns>
+        /// 
+
+        /// <summary>
+        /// Footer da Aplicação
+        /// </summary>
+        string footer = ConfigurationManager.AppSettings["MenuFooter"] ?? "Autor - Desconhecido";
+
         public int layout(string FILE_PATH, string HEADER)
         {
             // aqui a gente monta o caminho final do arquivo, usando o HEADER como nome
@@ -61,7 +69,7 @@ namespace MVCSharp.Handler
 
             // Exibe o rodapé do menu.
             Console.WriteLine("*****************************");
-            Console.WriteLine("*     Autor - William O     *");
+            Console.WriteLine($"*     {footer,-21}*");
             Console.WriteLine("*****************************");
 
             // Navega pelo menu e retorna a opção selecionada.
